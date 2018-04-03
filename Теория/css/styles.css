@@ -1,7 +1,7 @@
 .title-1 {
     text-align: center;
     text-transform: uppercase;
-    margin: 20px;
+    margin: 50px 90px;
     font-size: 30px;
     font-weight: bold;
 }
@@ -14,7 +14,7 @@
 }
 
 .content {
-    margin: 20px;
+    margin: 50px 90px;
 }
 
 .content p {
@@ -22,6 +22,7 @@
     font-size: 20px;
     margin: 0;
     text-align: justify;
+    line-height: 1.5;
 }
 
 .list {
@@ -29,6 +30,7 @@
     margin-left: 70px;
     padding: 0;
     font-size: 20px;
+    line-height: 1.5;
 }
 
 .center {
