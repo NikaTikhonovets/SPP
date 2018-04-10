@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+
+<HEAD>
+    <LINK rel=stylesheet href="../../css/styles.css" type=text/css>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+    <META HTTP-EQUIV="Content-Language" CONTENT="ru">
+    <title>Тема №31</title>
+    <base target="_top">
+</HEAD>
+
+<BODY>
+    <div class="title-1">
+        Тема №31 "Spring. Связывание объектов"
+    </div>
+    <div class="content">
+        <p>
+            <b>Spring Framework</b> (или коротко Spring) — универсальный фреймворк с открытым исходным кодом для Java-платформы.
+        </p>
+        <p>
+            Spring имеет собственную MVC-платформу веб-приложений, которая не была первоначально запланирована. Разработчики Spring решили
+            написать её как реакцию на то, что они восприняли как неудачность конструкции (тогда) популярного Apache Struts,
+            а также других доступных веб-фреймворков. В частности, по их мнению, было недостаточным разделение между слоями
+            представления и обработки запросов, а также между слоем обработки запросов и моделью.
+        </p>
+        <p>
+            Как и Struts, Spring MVC является фреймворком, ориентированным на запросы. В нем определены стратегические интерфейсы для
+            всех функций современной запросно-ориентированной системы. Цель каждого интерфейса — быть простым и ясным, чтобы
+            пользователям было легко его заново имплементировать, если они того пожелают. MVC прокладывает путь к более чистому
+            front-end-коду. Все интерфейсы тесно связаны с Servlet API. Эта связь рассматривается некоторыми как неспособность
+            разработчиков Spring предложить для веб-приложений абстракцию более высокого уровня. Однако эта связь оставляет
+            особенности Servlet API доступными для разработчиков, облегчая все же работу с ним.
+        </p>
+        <br>
+        <p>
+            <b>Связывание объектов (@autowired)</b> - аннотация может использ-ся над полем или методом для связывания по типу.
+            Чтобы аннотация заработала, необходимо указать небольшие надстройки в конфигурационном файле спринга с помощью
+            элемента contex:annotation-config.
+        </p>
+        <p>
+            Виды связывания autowire:
+            <ul class="list">
+                <li>byName;</li>
+                <li>byType;</li>
+                <li>by constructor;</li>
+                <li>by @Autowired and @Qualifier annotations.</li>
+            </ul>
+        </p>
+        <p>
+            Термин “бин” в Spring используется для ссылки на любой компонент, управляемый контейнером. Обычно бины на определенном уровне
+            придерживаются спецификации JavaBean, но это не обязательно особенно если для связывания бинов друг с другом
+            планируется применять Constructor Injection. Для получения экземпляра бина используется ApplicationContext. IoC
+            контейнер управляет жизненным циклом спринг бина, областью видимости и внедрением.
+        </p>
+        <p>
+            Нижеследующий программный код показывает XML-файл контекста приложения с определениями bean-компонентов для сценария create
+            course:
+        </p>
+        <br>
+        <p>
+            &lt;beans&gt;
+        </p>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&lt;bean id=&quot;course&quot; class=&quot;demo.Course&quot;&gt;
+        </p>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;property name=&quot;module&quot; ref=&quot;module&quot;/&gt;
+        </p>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&lt;/bean&gt;
+        </p>
+        <br>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&lt;bean id=&quot;module&quot; class=&quot;demo.Module&quot;&gt;
+        </p>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;property name=&quot;assignment&quot; ref=&quot;assignment&quot;/&gt;
+        </p>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&lt;/bean&gt;
+        </p>
+        <br>
+        <p>
+            &nbsp&nbsp&nbsp&nbsp&lt;bean id=&quot;assignment&quot; class=&quot;demo.Assignment&quot; /&gt;
+        </p>
+        <p>
+            &lt;/beans&gt;
+        </p>
+        <br>
+        <p>
+            Представленный выше XML-файл — это то, что пишется для конфигурирования bean-компонентов в среде разработки Spring.
+            Данный XML-файл определяет bean-компонент Course, который ссылается на bean-компонент Module, а bean-компонент
+            Module ссылается на bean-компонент Assignment.
+        </p>
+        <br>
+        <p>
+            Способы для получения основных объектов контейнера внутри бина:
+            <ul class="list">
+                <li>Реализовать один из Spring*Aware (ApplicationContextAware, ServletContextAware, ServletConfigAware и др.)
+                    интерфейсов. </li>
+                <li>Использовать автоматическое связывание @Autowired в спринг. Способ работает внутри контейнера спринг. </li>
+            </ul>
+        </p>
+    </div>
+</BODY>
+
+</HTML>
