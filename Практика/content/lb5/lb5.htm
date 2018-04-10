@@ -1,0 +1,59 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+	<LINK rel=stylesheet href="../../css/styles.css" type=text/css>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+	<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+	<title>Лабораторная работа №2</title>
+	<base target="_top">
+</HEAD>
+<BODY>
+	<div class="title-1">
+		Лабораторная работа №2
+	</div>
+
+	<div class="title-2">
+		Задание
+	</div>
+	<div class="content">
+		<p>
+			<b>WCF-сервис</b> - калькулятор выражений.
+		</p>
+		<br>
+		<p>
+Библиотека, написанная на C++, представленная в виде DLL, используется WCF как основа для вычислений. Реализует методы <i>Add, Substract, Multiply, Divide.</i>
+</p>
+<br>
+<p>
+У WCF-сервиса есть методы:
+<ul class="list">
+	<i>
+<li>public double Set(double a);</li>
+<li>public double Add(double a);</li>
+<li>public double Substract(double a);</li>
+<li>public double Multiply(double a);</li>
+<li>public double Divide(double a);</li>
+<li>public double Reset();</li>
+<li>public double Result();</li>
+</i>
+</ul>
+</p>
+<p>
+На вход дается выражение с цифрами и знаками. Необходимо делать разбор выражений в дерево классов <i>Expression с LambdaExpression </i>в качестве корня, а потом динамически компилировать это выражение в делегат, который выполняется и производит расчёт. Результат - на экран.
+</p>
+<br>
+<p>
+В итоге должно получиться 3 проекта:
+<ul class="list">
+<li>C++ библиотека с 4 методами <i>(Add, Substract, Multiply, Divide)</i>,</li>
+<li>WCF-сервис,</li>
+<li>Клиент, которому на вход дается выражение в виде строки, и который на экран выводит результат вычислений.</li>
+</ul>
+</p>
+	
+		
+	</div>
+
+</BODY>
+</HTML>
