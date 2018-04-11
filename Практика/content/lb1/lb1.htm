@@ -1,18 +1,91 @@
-<!-- (C) 2004-06 Nick G Shchetko, Anatoly A Matveev for Military Faculty, BSUIR -->
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
-<META HTTP-EQUIV="Content-Language" CONTENT="ru">
-<title>Лабораторная работа №1</title>
-<base target="_top">
-</HEAD><BODY>
-<div align="center">
-  <p><strong>Лабораторная работа № 1 &quot;Фильм&quot; </strong></p>
-</div>
-<p>В БГУИР читается курс &quot;Высшая математика&quot; </p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>А сейчас вставим <a href="../../video/lb1/Фильм.wmv">видео</a></p>
-</BODY>
+	<LINK rel=stylesheet href="../../css/styles.css" type=text/css>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+	<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+	<title>Лабораторная работа №1</title>
+	<base target="_top">
+</HEAD>
+<BODY>
+	<div class="title-1">
+		Лабораторная работа №1
+	</div>
+
+	<div class="title-2">
+		Задание
+	</div>
+	<div class="content">
+		<p>
+			Написать собственный <b>Tracer</b>. На выходе должно быть два проекта.
+		</p>
+		<p>
+			<b>Первый проект</b> - класс Tracer, который позволяет замерять время выполнения любых методов. Методы, которые необходимо реализовать в классе:
+		</p><i>
+			<p>
+				class Tracer 
+			</p>
+			<p>
+			{</p>
+			</i>
+			<p>
+
+				// метод должен быть вызван перед вызовом замеряемого метода
+			</p>
+			<i>
+				<p>
+					public void StartTrace();
+				</p>
+			</i>
+			<p>
+				// метод должен быть вызван после вызова замеряемого метода
+			</p>	
+			<i>
+				<p>
+					public void StopTrace();
+				</p>
+			</i>
+			<br>
+			<p>
+				
+
+				// построение xml-файла с результатами замеров
+			</p>
+			<i>
+				<p>
+					public void BuildXml();
+				</p>
+			</i>
+			<p>
+				// вывод дерева результатов на консоль
+			</p>
+			<i>
+				<p>
+					public void PrintToConsole();
+				</p>
+				<p>
+				}
+			</p>
+		</i>
+		<br>
+		<p>
+
+			Tracer генерирует <i>xml-файл</i> следующего содержания.
+		</p>
+		<br>
+		<p>
+			А также выводит дерево на консоль. Вложенные вызовы <i>StartTrace()</i> и <i>StopTrace()</i> должны влиять на вложенность элементов в xml-дереве. У каждого элемента (метода) должны быть вычислены следующие атрибуты:
+			<ul class="list">
+				<li>имя метода;</li>
+				<li>имя класса, которому метод принадлежит;</li>
+				<li>время выполнения метода;</li>
+				<li>количество параметров метода.</li>
+			</ul></p>
+			<p>
+				<b>Второй проект</b> - проект с задержками, циклами и многопоточностью. В коде второго проекта должны содержаться вызовы методов класса Tracer.
+			</p>
+		</div>
+
+	</BODY>
 </HTML>
