@@ -96,3 +96,9 @@ A:HOVER {
 	color: #115ADB;
 	text-decoration: underline;
 }
+
+.part {
+	margin: 20px;
+	font-size: 15px;
+	color: #005AA6;
+}
